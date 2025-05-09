@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: AI YouTube Automation API
+  version: 1.0.0
+  description: API for auto-generating and uploading videos to YouTube
+
+paths:
+  /generate:
+    post:
+      summary: Generate video from text
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+      responses:
+        '200':
+          description: Video created successfully
