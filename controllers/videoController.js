@@ -13,14 +13,17 @@ const client = new ElevenLabsClient({
 const prompts = [
   'A futuristic cityscape at sunset.',
 ];
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 
-
-
+const imageFilePath = path.resolve(__dirname, '../output/lion.png');
+const audioFilePath = path.resolve(__dirname, '../output/speech.mp3');
 
 export const generateVideo = async (req, res) => {
-  const result = await generateTalkingVideo()
+  const result = await generateTalkingVideo(imageFilePath, audioFilePath);
   // const result = await generateImages(prompts);
   // console.log("Image generation result:", result);
   // try {
