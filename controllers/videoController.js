@@ -3,6 +3,8 @@ import "dotenv/config";
 import fs from "fs";
 import path from "path";
 import { generateImages } from './imageController.js';
+import { generateTalkingVideo } from './imageToVideo.js';
+
 const client = new ElevenLabsClient({
   apiKey: process.env.ELEVEN_LABS_API_KEY,
 });
@@ -18,8 +20,9 @@ const prompts = [
 
 
 export const generateVideo = async (req, res) => {
-  const result = await generateImages(prompts);
-  console.log("Image generation result:", result);
+  const result = await generateTalkingVideo()
+  // const result = await generateImages(prompts);
+  // console.log("Image generation result:", result);
   // try {
   //   const text = "The first move is what sets everything in motion.";
   //   const voiceId = "JBFqnCBsd6RMkjVDRZzb";

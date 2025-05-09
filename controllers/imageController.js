@@ -52,10 +52,3 @@ export const generateImages = async (prompts) => {
   }
 };
 
-// Example usage:
-const prompts = [
-  'A futuristic cityscape at sunset.',
-
-];
-
-generateImages(prompts);
